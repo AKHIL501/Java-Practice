@@ -1,0 +1,275 @@
+2.Methods
+
+****Inside the class bussiness logics are not allowed
+
+purpose:- methods are used to write the logics of the application.
+inside the class declare the methods inside the method wrire logics of the application.
+------------------------------------------------------
+Two types of methods
+1.Instance methods
+2.static	methods
+-----------------------------------------------------
+1.Instance methods
+
+void m1()
+{
+// logics
+}
+-------------------------------------------------------
+2.static	methods
+static void m1()
+{
+// logics
+}
+ method is executed whenever we passing the parameters list
+syntax:- 
+
+modifiers-list  return type methodname (parameters) throws exception
+
+Example:- public void m1(int a, int b)
+		  private int m2()
+		  protected int m3(int a) throws exception
+		  
+Method signature:- method_name (params list)
+					m1(int a, int b)
+					m2()
+					m3(int a)
+	
+parts of method	
+	void m1()// method declaration
+	{
+	//Implementation
+	}
+	
+	Test t=new Test();
+	t.m1();// method calling
+	
+	
+	
+	
+-----------------------------------------	
+	Examples:---
+	1. with out arguments
+	class Test
+	{
+	void m1()// Instance method
+	{
+	System.out.println("M1 method");
+	}
+	static void m2()//static method
+	{
+	System.out.println("M2 method");
+	}
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1();
+	Test.m2();
+	}
+	}
+------------------------------------------------------------------------------	
+	2. with arguments
+	class Test
+	{
+	void m1(int a, char ch)// Instance method // local variables
+	{
+	System.out.println("M1 method");
+	System.out.println(a);
+	System.out.println(ch);
+	}
+	static void m2(String str, double d)//static method
+	{
+	System.out.println("M2 method");
+	System.out.println(str);
+	System.out.println(d);
+	}
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1(10,'a');//passing arguments
+	Test.m2("akhil",10.5);//passing arguments
+	}
+	}
+------------------------------------------------------------------------------
+
+		3. Method accepting objects
+		
+		class X{}
+		class Emp{}
+		class Y{}
+		class Stu{}
+		
+		class Test
+	{
+	void m1(X x, emp e)// Instance method // 
+	{
+	System.out.println("M1 method");
+	}
+	static void m2(Y y, Stu s)//static method
+	{
+	System.out.println("M2 method");
+	}
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	X x=new X();
+	Emp e1=new Emp();
+	t.m1(x,e1);//t.m1(new X(), new Emp())
+	
+	Y y=new Y();
+	Stu s = new Stu();
+	Test.m2(y,s);//Test.m2(new Y(), new Stu())
+	}
+	}
+------------------------------------------------------------------------
+	
+
+	4. Two methods with same signature
+
+	
+		
+	class Test
+	{
+	void m1()
+	{
+	System.out.println("M1 method");
+	}
+	 void m1()
+	{
+	System.out.println("M2 method");
+	}
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1();
+	}
+	}
+	
+	
+	***Duplicate methods are not allowed
+	*** Two methods with same signature is not allowed in java it generates error.
+--------------------------------------------------------------------------------------------------
+	
+	Example 5
+	
+	class Test
+	{
+	m1()
+	{
+	System.out.println("M1 method");
+	}
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1();
+	}
+	}
+	
+	***  Return type is mandatory  
+	-------------------------------------------------------------------------------------------------
+	Example 6
+	
+	class Test
+	{
+	void m1()
+	{
+	System.out.println("M1 method");
+	void m2()// Inner method
+	{ 
+	System.out.println("M2 method");
+	}
+	}
+	 
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1();
+	
+	}
+	}
+	
+	*** Inner methods is not allowed
+	----------------------------------------------------------------------------------------------
+	
+	Example 7:- Method callind // one method is calling another method using method name
+	
+	class Test
+	{
+	void m1()
+	{
+	m2(); // Instance method calling //m3 m2
+		  //*** all the statements in m2 is executes then m1 method is executed
+		  m2(); //m3 m2
+	System.out.println("M1 method");
+	}
+	void m2()
+	{ 
+	m3();
+	System.out.println("M2 method");
+	}
+	void m2(int a)
+	{ 
+	System.out.println("M2 method");
+	}
+	 
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1();
+	
+	}
+	}
+	-------------------------------------------------------------------------------------------------------
+	Example 8:- this key word
+	
+	class Test
+	 {
+	 int x=100;
+	 int y=200;
+	 void add(int x, int y)
+	 {
+	 System.out.println(x+y);
+	 System.out.println(this.x+this.y);// Instance variables 
+	 }
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1(10,20);
+	
+	}
+	}
+	
+	------------------------------------------------------------------------------------------
+	Example 9	:-Inside the static method this key word is not allowed 
+	
+	class Test
+	 {
+	 int x=100;
+	 int y=200;
+	static  void add(int x, int y)
+	 {
+	 System.out.println(x+y);
+	 System.out.println(this.x+this.y);// Instance variables 
+	 }
+	public static void main (String[] args)
+	{
+	Test t=new Test();
+	t.m1(10,20);
+	
+	}
+	}
+	
+	------------------------------------------------------------------------------------------
+	
+	Example 10:-  operator overloading // java not supports // + Implecet Variable
+	
+	class Test
+	 {
+	public static void main (String[] args)
+	{
+	System.out.println("Akhil"+"teju");
+	System.out.println(x+y);
+	}
+	}
+	
+	------------------------------------------------------------------------------------------

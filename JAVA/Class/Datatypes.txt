@@ -1,0 +1,28 @@
+Data Types
+			1.Represents type of the variable
+			2.data type represents the memory size of the variable
+			3. range value decided by type of the variable
+			
+			1.Primitive data type
+			
+				Datatype 	Size
+				byte		1
+				short 		2
+				int 		4
+				long		8
+				
+				float 		4
+				double		8
+					
+				char		2
+				boolean		nosize
+				
+				
+				2n to 2n-1
+				
+				float f=(float)10.5// type casting
+				or
+				float f=10.5f
+				
+				double =20.8
+				
