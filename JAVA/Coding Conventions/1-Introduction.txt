@@ -1,0 +1,71 @@
+1.Java is a case sensitive language
+
+Java coding conventions for the class
+  
+  ***class name starts with capital letter
+  ***every inner word starts with capital letter
+	 
+	Example:- String,
+				stringBuffer,
+				inputStreamReader
+	
+	This convention is called camelcase convention.  
+	
+	
+Interfaces:-
+
+both are same
+
+	:-Serializable, Ra  randomAcsess
+	-----------------------------------------> nouns
+	method name starts with lower, inner word starts with upper
+	
+	ex:- display(), charAt(), toUpperCase(),
+	
+	mixed case conventions
+	
+	Variables:-
+	
+	methods and variables are same:
+	out,pageContext.----------> verbs
+	
+	
+	Packages
+	
+	Package is a collection of classes and interfaces 
+classes and interfaces contain corresponding methods.
+
+coding conventions: every character should be lower case
+ex:- java.lang, java.util
+
+Constants:- every character must  be upper case.
+	
+	Ex-MIN, MAX
+	
+	
+	coding conventions are mandatory for predefined library and  optional for user defined library.
+	
+	
+	Identifier :-
+	
+	Every name in java is called identifier.
+	
+	 1) a-z A-Z 0-9 $ should not starts with number.
+	 2) not possible to declare keywords as a identifier
+	 3) predefined classes and interfaces are allowed but it is not recomended.
+	 4)case sensitive
+	 
+	 
+	 
+	 
+	 Java tokens:- smallest individual part of the application is called token.
+	 
+	 Comments:-
+		Single line
+		multiline comments
+		documentation comments:- used to prepare API documents
+		
+		API:- it contain predefined methods.
+		
+	
+	   

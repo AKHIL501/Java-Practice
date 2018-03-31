@@ -1,0 +1,17 @@
+ Building  Blocks of JAVA
+ 
+	1.Inheritance
+	2.Polymorphism
+	3.Abstraction
+	4.Encapsulation
+	----------------------------
+	5.Class
+	6.Object
+	
+	
+	
+	Class Vs Object
+	1.class is a logical entity contains logics of the Application 
+	where as object is Physical entity it is creating memory of class logics.
+	
+	2. without class there is no object. 
