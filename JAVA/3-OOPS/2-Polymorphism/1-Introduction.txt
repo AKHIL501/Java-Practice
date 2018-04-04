@@ -1,0 +1,387 @@
+Polymorphism Example
+
+
+		Polymorphism:- one thing in many forms (the ability to appear in many forms is called polymorphism)
+		
+		Types of Polymorphism:
+		1.Compile time polymorphism / Static binding /earlier binding
+		
+			Ex:- method over loading 
+			
+		2.Runtime polymorphism /Dynamic polymorphism / late binding
+		
+			Ex-method overriding
+			
+			
+	1.Compile time polymorphism
+			
+				over loading  types
+				
+				1.Method over loading		(compile time polymorphism)
+				2.Constructor over loading
+				3.operator over loading
+				
+				
+				1.Method over loading :- only one java class is required.
+				
+				class Test{
+				//Method over loading
+				
+				void m1(int a)
+				{
+				System.out.println("int M1 Method");
+				}
+				void m1(int a,int b)
+				{
+				System.out.println("int,int M1 Method");
+				}
+				void m1(char ch)
+				{
+				System.out.println("char m1 Method");
+				}
+				 public static void main(String[] args)
+				 {
+				 Test t=new Test();
+				 t.m1(10);
+				 t.m1(10,20);
+				 t.m1('a');
+				 }
+				
+				}
+				
+				2.Constructor over loading
+				
+				class Test{
+				Test(int a)
+				{
+				System.out.println("int arg constructor");
+				}
+				Test(int a, int b)
+				{
+				System.out.println("int,int arg constructor");
+				}
+				Test(char ch)
+				{
+				System.out.println("char arg constructor");
+				}
+				public static void main(String[] args)
+				{
+				new Test(10);
+				new Test(10,20);
+				new Test('a');
+				}
+				
+				2.Operator over loading // one operator with different operations is called operator over loading
+				//c++ suppoerts operator over loading concept
+				//java not supporting operator over loading 
+				// + is over loaded operator in java.
+				
+				
+				class Test{
+				public static void main(String[] args)
+				{
+					system.out.println(10+20);
+					system.out.println("Akhil"+"A");
+					system.out.println("Akhil"+501);
+					system.out.println("10+Akhil"+"A"+10+20);
+					system.out.println("10+Akhil"+"A"+(10+20));
+					
+				}
+				
+				}
+				
+		II. Method overriding: 2 java classes are required with inheritance relationship
+			// method implementation is already present in the parent class.
+			// 
+			
+			Example:-
+			
+			class Parent{ //overridden method
+			
+			void m1()
+			{
+			System.out.println("Apple");
+			}
+			class Child extends Parent{ //overridding method
+			void m1()
+			{
+			System.out.println("Mango");
+			}
+			}
+			}
+		
+			
+			
+			8 Rules:-
+			
+			1.overridden(parent) and overriding(child) method signature  must be same
+			
+			Example:-
+			
+			class Parent{ //overridden method
+			
+			void m1()
+			{
+			System.out.println("Apple");
+			}
+			class Child extends Parent{ //overridding method
+			void m1()
+			{
+			System.out.println("Mango");
+			}
+			}
+			}
+			
+			2.overridden(parent) and overriding(child) return type  must be same at primitive level.
+			
+			Example:-
+			
+			class Parent{ //overridden method
+			
+			void m1()
+			{
+			System.out.println("Apple");
+			}
+			class Child extends Parent{ //overridding method
+			int m1()
+			{
+			System.out.println("Mango");
+			}
+			}
+			}
+			
+			3.return type changing is possible (covarient return type concept version 1.5)
+			
+			Example:-
+			
+			class Parent{ //overridden method
+			
+			Animal m1()
+			{
+			System.out.println("Black dog");
+			Animal a =new Animal();
+			return a;
+			}
+			class Child extends Parent{ //overriding method
+			Dog m1()
+			{
+			System.out.println("Red dog");
+			return new Dog();
+			}
+			}
+			}
+			
+			4. final modifier methods are  not overridden
+				
+			class Parent{ //overridden method
+			
+			final void m1()
+			{
+			System.out.println("Apple");
+			}
+			class Child extends Parent{ //overridding method
+			int m1()
+			{
+			System.out.println("Mango");
+			}
+			}
+			}
+			
+			//final variables reassignment is not possible
+			ex: final int a=10;
+			a=a+10;
+			
+			//final class variable are not final
+			//reassign is possible
+			
+			class Parent{ //overridden method
+			 void m1()
+			{
+			final int a=10;
+			a=a+10;
+			System.out.println("Apple");
+			}
+			class Child extends Parent{ //overridding method
+			int m1()
+			{
+			System.out.println("Mango");
+			}
+			}
+			}
+			
+			
+			
+			final class Parent{ //overridden method
+			 int a=100; //not final
+			 void m1() // final method
+			{
+			int a=10;
+			a=a+10;
+			System.out.println("Apple");
+			}
+			class Child extends Parent{ //overridding method
+			int m1()
+			{
+			System.out.println("Mango");
+			}
+			public static void main(String[] args)
+			{
+			new Child.m1();
+			}
+			}
+			}
+			
+			
+			
+			//final class variables are not a final but methods are final
+			
+		
+			
+			
+			5. parent class reference vaible is able to hold child class variables.
+			
+			class parent
+			{
+			}
+			class Child extends Parent
+			{
+			Parent p =new Parent();// valid
+			Child c= new Child();//valid  
+			Parent p = new Child() // parent class reference variable
+			Child c = new Parent() //Invalid
+			}
+			
+			
+			class parent
+			{
+			void m1(){System.out.println("parent m1();")}
+			}
+			class Child extends Parent
+			{
+			void m1(){System.out.println("Child m1();")}
+			void m2(){System.out.println("Child m()")}
+		public static void main (String[] args)
+		{
+		Parent p =new Child();
+		p.m1();	//compile: Parent runtime:Child is executed
+		//p.m2(); //compile: Parent compiler error
+		Child c=(Child)p;
+		c.m2();
+		}	
+			}
+			
+			
+			class parent // method hiding concept.
+			{
+			void m1(){System.out.println("parent m1();")}
+			}
+			class Child extends Parent
+			{
+			static void m1(){System.out.println("Child m1();")}// static methods are not overridden  in java (borned with class)
+			
+		public static void main (String[] args)
+		{
+		Parent p =new Child();
+		p.m1();	
+		
+		}	
+			}
+			
+				
+
+			6. Private modifier it is applicable for variables and methods (able to access with in the class)
+			
+			
+			class parent 
+			{
+			private void m1(){System.out.println("parent m1();")}
+			}
+			class Child extends Parent
+			{
+			void m1(){System.out.println("Child m1();")}/
+			
+			public static void main (String[] args)
+			{
+			Parent p =new Parent();
+			p.m1();	 //Generates error
+		
+			}	
+			}
+			
+			class parent 
+			{
+			private void m1(){System.out.println("parent m1();")}
+			}
+			class Child extends Parent
+			{
+			private void m1(){System.out.println("Child m1();")}/
+			
+			public static void main (String[] args)
+			{
+			Parent p =new Parent();
+			p.m1();	 //Generates error
+			p.m2();
+		
+			}	
+			}
+			
+			
+			
+			Modifiers:-
+			
+					Public :- applicable for variables, methods and constructors -->any package is access
+					Protect :- variables and methods ---> with in the package , out side package only child classes
+					Private :- variables and methods ---> with in the class
+					Default :- variables and methods and classes ---> we are declare any modifier is applied. ---> with in the package.
+			
+			7.
+			Case 1:-
+			class parent  // same level
+			{
+			 void m1(){System.out.println("parent m1();")}
+			}
+			class Child extends Parent
+			{
+			 void m1(){System.out.println("Child m1();")}/
+			
+			public static void main (String[] args)
+			{
+			Parent p =new Parent();
+			p.m1();
+			p.m2();
+			}	
+			}
+			Case 2:-
+			class parent  // same level
+			{
+			 protected void m1(){System.out.println("parent m1();")}
+			}
+			class Child extends Parent
+			{
+			public void m1(){System.out.println("Child m1();")}/
+			
+			public static void main (String[] args)
+			{
+			Parent p =new Parent();
+			p.m1();
+			p.m2();
+			}	
+			}
+			Case 3:-
+			class parent  // same level
+			{
+			  void m1(){System.out.println("parent m1();")}
+			}
+			class Child extends Parent
+			{
+			 public void m1(){System.out.println("Child m1();")}/
+			
+			public static void main (String[] args)
+			{
+			Parent p =new Parent();
+			p.m1();
+			p.m2();
+			}	
+			}
+			//weaker access previlages. decreaseing permissions are not possible in java only sam elevel and increasing are possible in java
+			8.

@@ -1,0 +1,72 @@
+		
+		Cloning:- the process of creating exact duplicate objects is called cloning process. 
+		the main objective of the cloning is to maintain the backup
+		
+			class Test
+			{
+			int a=10;
+			int b=20;
+			 
+			 public static void main (String[] args) throws Exception
+			 {
+			 Test t =new Test();
+			 System.out.println(t.a);
+			 System.out.println(t.b);
+			 
+			 t.a=100;
+			 t.b=200;
+			 
+			 System.out.println(t.a);
+			 System.out.println(t.b);
+			 
+			 Test t1=new (Test)t.clone();
+			 
+			 t.a=1000;
+			 t.b=2000;
+			 
+			 System.out.println(t.a);
+			 System.out.println(t.b);
+			 
+			 // get old values here
+			 System.out.println(t1.a);
+			 System.out.println(t1.b);
+			 
+			 
+			 
+			 }
+			}
+			
+			*** initially class not supports the duplicate object creation
+			*** if u want to perform the duplicate object creation  u r class must implements clonable interface
+			
+			
+			
+			class Test implements clonable
+			{
+			int a=10;
+			int b=20;
+			 
+			 public static void main (String[] args) throws Exception
+			 {
+			 Test t =new Test();
+			 System.out.println(t.a);
+			 System.out.println(t.b);
+			 
+			 t.a=100;
+			 t.b=200;
+			 
+			 System.out.println(t.a);
+			 System.out.println(t.b);
+			 
+			 Test t1=new (Test)t.clone();
+			 
+			 t.a=1000;
+			 t.b=2000;
+			 
+			 System.out.println(t.a);
+			 System.out.println(t.b);
+			 
+			 // get old values here
+			 System.out.println(t1.a);
+			 System.out.println(t1.b);
+			 

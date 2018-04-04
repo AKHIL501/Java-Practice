@@ -14,7 +14,7 @@ Class contains 5 elements
 Purpose of variables: variables are used to store the values by using these values we achieving  project requirement.
 
 int a=10--------> a is a variable of int type
-the variable it may be ------> 
+ 
 
 
 primitive type, 

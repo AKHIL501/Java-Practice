@@ -1,0 +1,314 @@
+	Interface:--> Interfaces are extension of abstract classes
+	abstract class:- contains atleast one abstract method.  abstract class may contain abstract methods are may not contain
+					abstract methods.	
+			
+	Interface (SRS document):--> Interfaces are extension of abstract classes, we declare interface by using interface key word,
+					interface only allows abstract methods.
+					
+				interface heilights the set of functionalities of the project
+				
+				by default interfaces methods are public and abstract
+				by default interfaces abstract
+				interfaces object creation is not allowed. 
+				
+				
+				Example1:-
+				
+				interface it1 // abstract
+				{
+					void m1();// public abstract
+					void m2();// public abstract
+					void m3();// public abstract
+				}
+				
+				class Test implements it1
+				{
+				public void m1(){System.out.println("M1 Method");}
+				public void m2(){System.out.println("M2 Method");}
+				public void m3(){System.out.println("M3 Method");}
+				
+				public static void main(String[] args)
+				{
+					Test t= new Test();
+					t.m1();
+					t.m2();
+					t.m3();
+					
+					it1 i = new Test(); // interface is able to hold implementation class object also
+					i.m1();
+					i.m2();
+					i.m3();
+				}
+				
+				}
+				
+				
+				Example12:-
+				
+				interface it1 // abstract
+				{
+					void m1();// public abstract
+					void m2();// public abstract
+					void m3();// public abstract
+				}
+				
+				abstract class Test implements it1
+				{
+				public void m1(){System.out.println("M1 Method");
+				}
+				abstract class Test1 implements Test
+				{
+				public void m2(){System.out.println("M2 Method");
+				}
+				 class Test2 implements Test1
+				{
+				public void m3(){System.out.println("M3 Method");
+				
+				public static void main(String[] args)
+				{
+					Test2 t= new Test2();
+					t.m1();
+					t.m2();
+					t.m3();
+					}	
+				}
+				
+				
+			*** Inheritance is possible in interfaces.
+			
+			Interface Inheritance:
+			
+			------------------------------------------------
+			Interface vs class
+			-------------------------------------------------
+			
+				interface It1
+				{
+				void m1();
+				}
+				interface It2 extends It1
+				{
+				void m2();
+				}
+				interface It3 extends It2
+				{
+				void m3();
+				}
+				
+				class Test implements It1
+				{
+					override 1 method
+				}
+				class Test implements It2
+				{
+					override 2 method
+				}
+				class Test implements It3
+				{
+					override 3 method
+				}
+				
+			*** one interface able to extend multiple interfaces at a time.
+			
+				interface It1
+				{
+				void m1();
+				}
+				interface It2 
+				{
+				void m2();
+				}
+				interface It3 extends It1,It2
+				{
+				void m3();
+				}
+				class Test implements It3
+				{
+					override 3 methods
+				}
+				
+				
+				Rules
+				
+				class extends class
+				interface extends interface
+				class implements interface
+				
+				
+				class A extends B			------> valid
+				class A extends B,C			------> invalid	
+				class A implements It1		------> valid
+				class A implements It1,It2	------> valid
+				class A extends A			------> invalid (cyclic inheritance)
+				
+				interface It1 extends It2		------> valid
+				interface It1 extends It1,It2	------> valid
+				interface It1 extends A 		------> invalid
+				interface It1 extends It1 		------> invalid (cyclic inheritance)
+				
+				(extends key word must be first )
+				class A extends B implements It1,It2 ------>valid
+				class A implements It1,It2 extends B ------>invalid
+				
+				
+				 Nested Interface (Map.Entry)
+				 
+				 map---> map is main interface
+				 Entry-->entry is sub interface
+				 
+				 interface It1
+				 {
+					interface it2
+					{
+						void m1();
+					}
+				 }
+			
+			class Test implements It1.It2
+			{
+			public void m1()
+			{
+			System.out.println("m1 method");
+			}
+			public static void main(String[] args)
+			{
+				new Test.m1();
+			}
+			}
+			
+			*** it is possible to declare interface with in the class also
+			
+			
+			class A
+				 {
+					interface it2
+					{
+						void m1();
+					}
+				 }
+			
+			class Test implements A.It2
+			{
+			public void m1()
+			{
+			System.out.println("m1 method");
+			}
+			public static void main(String[] args)
+			{
+				new Test.m1();
+			}
+			}	
+				
+				
+		Interface variables:
+		
+		***interface variables are by default :- public, static ,final.
+		*** interfaces are by default abstract 
+		*** interface methods are by default public and abstract
+		
+		
+			Ex:-
+			interface It1  //abstract
+			{
+			int a=10;		//public static final
+			void m1();  // public abstract
+			}
+			
+			class Test implements It1
+			{
+			public void m1()
+			{
+			a=a+10 //error
+			System.out.println(a);
+			public static void main(String[] args)
+			{
+				new Test.m1();
+			}
+			}
+			}
+			
+			
+			Ex2:-
+			interface It1  //abstract
+			{
+			int a=10;		//public static final
+			void m1();  // public abstract
+			}
+			interface It1  //abstract
+			{
+			int a=10;		//public static final
+			
+			}
+			
+			class Test implements It1,It2
+			{
+			public void m1()
+			{
+			//a=a+10 //error
+			System.out.println(It1.a);
+			System.out.println(It2.a);
+			//System.out.println(It.a);//ambiguity problem
+			public static void main(String[] args)
+			{
+				new Test.m1();
+			}
+			}
+			}
+				
+				
+				
+			Problem:-
+
+				if interface contains 10 methods u want to implement only 2 methods. here u want to implement all the 10 methods
+				
+				over come this problem we use adapter class
+				
+				Adapter class:- it contains empty implementations of interface 
+				
+				
+				inheritance It1
+				{
+				void m1();
+				void m2();
+				.
+				.
+				.
+				void m10();
+				}
+				class X implements It1 // adapter class
+				{
+				void m1();
+				void m2();
+				.
+				.
+				.
+				void m10();
+				}
+				class Test Implements It1
+				{
+				override 10 method
+				}
+				class Test extends X
+				{
+				override required methods
+				}
+				
+				marker interface:- the inter face without methods but u r class must acquire some capabilities to perform some operations is called marker interface 
+				
+				Ex:- javap java.io.Serializable
+					javap java.io.RandomAccess
+					javap java.io.Clonable
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
