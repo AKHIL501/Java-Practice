@@ -1,0 +1,42 @@
+	
+	Exception Handling:- Exception means abnormal termination. or exception is an event it terminates the program abnormally.
+	
+		1.try block
+		2.catch block
+		3.finally block
+		4.throw
+		5.throws
+		
+		
+		Types of Exception in java
+		
+		1. Checked Exception	:
+		2. Un-checked Exception	:
+		3. Error				:
+		
+		
+		2. Unchecked Exception: the exception that are not checked by compiler( occurred at run time. )
+		
+		Example:-
+		
+			class Test
+			{
+			public static void main (String args[])
+			{
+			System.out.println("Hello Human");
+			System.out.println("Hello Human");
+			System.out.println("Hello Human");
+			//System.out.println(10/0);//AE
+			
+			/*int[] a={10,20,30,40};
+			System.out.println(a[0]);
+			System.out.println(a[10]);//Array index out of bound*/
+			
+			String atr="Akhil";
+			System.out.println(str.charAt(2));
+			System.out.println(str.charAt(20));
+			
+			System.out.println("Hello Human");
+			System.out.println("Hello Human");
+			{
+			}
