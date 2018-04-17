@@ -14,9 +14,6 @@ public class ExceptionExample10
         {
             System.out.println("Ex0 caught"); 
         } 
-        catch (Exception e) 
-        {
-            System.out.println("exception caught");  
-        } 
+        
     } 
 }

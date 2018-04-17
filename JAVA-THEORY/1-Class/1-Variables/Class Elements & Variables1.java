@@ -35,8 +35,8 @@ Ex;-
 	Emp Salary
 	
 	Student Name
-			Id
-			Marks
+		Id
+		Marks
 
 	I. Local Variable
 	II. Instance Variables
@@ -114,7 +114,7 @@ Ex;-
 	}
 	void m1()// user defined method
 	{
-	// 
+	//	
 	
 	}
 	}

@@ -1,0 +1,193 @@
+Class contains 5 elements
+
+1.Variables
+2.Methods
+3.Constructors
+4.Instance Block
+5.Static Block
+
+
+
+ 
+1.Variables
+
+Purpose of variables: variables are used to store the values by using these values we achieving  project requirement.
+
+int a=10--------> a is a variable of int type
+ 
+
+
+primitive type, 
+int a=10, b=20;
+
+class type, 
+Test t;
+Emp e;
+
+enum, 
+
+array
+int[] a;
+String[] str;
+Ex;-
+	Emp Id   
+	Emp Name
+	Emp Salary
+	
+	Student Name
+		Id
+		Marks
+
+	I. Local Variable
+	II. Instance Variables
+	III. Static Variables
+	
+	I. Local Variable: 
+	
+	1.Declaration:- The variables which are declared inside the method or constructor or blocks those variables are 
+	called local variables.
+	2.Scope:- Scope of the local variables only with in the method or constructor or blocks.
+		Example:
+		void m1()
+		{
+		int a=10; //local variable
+		System.out.println(a);
+		}
+		
+		void m2()
+		{
+		System.out.println(a); // accessing not possible
+		}
+	
+	3.Memory Allocation:- Memory allocated when method in invoked(Starts) the memory is allocated for local variables.
+						  Method is completed method is destroyed (or released) automatically.
+	4.Storage:- Local Variables are store in stack memory.
+	
+	Example:
+	class Test
+	
+	{
+	public static void main (String[] args)
+	{
+	// inside the method
+	int a=10;
+	int b=20;
+	System.out.println(a+b);
+	
+	}
+	}
+	
+	Areas of java language
+	
+		A.Instance Area
+		B.Static Area
+		
+		A.Instance Area:-
+		
+		void m1() // Instance method
+		{
+		// Instance Area
+		}		
+	
+		B.Static Area
+	
+		static void m1() // static method
+		{
+		// static Area
+		}
+	
+	
+	II. Instance Variables
+	
+	1.Declaration:- In the class out side the of the method these variables are called Instance variables
+	
+	class Test
+	//In side the class out side the method.
+	int a=10;
+	int b=20;
+	// instance area
+	{
+	public static void main (String[] args) // main method
+	{
+	// inside the method
+	// static area
+	}
+	void m1()// user defined method
+	{
+	// 
+	
+	}
+	}
+	
+	2.Scope:- inside the class all methods & constructors & blocks
+	3.Memory Allocation:- when object is created , object is destroyed object is destroyed
+	4.Storage:- Heap memory
+	
+	
+	Instance variables and methods
+	Instance area:-Direct access 				static area:- access by using object reference variable
+	
+	
+	class Test
+	//In side the class out side the method.
+	// instance area
+	int a=10;
+	int b=20;
+	
+	{
+	public static void main (String[] args) // main method
+	{
+	// inside the method
+	// static area
+	Test t = new Test();
+	System.out.println(t.a);
+	System.out.println(t.b);
+	t.m1();
+	}
+	void m1()
+	{
+	// instance area
+	System.out.println(a);
+	System.out.println(b);
+	}
+	
+	}
+	
+	III. Static Variables
+
+	
+	1.Declaration:- The variables which are declared inside the class and outside the constructor or blocks those variables 
+	declared by using static modifier are called local variables.
+	2.Scope:- With in the class
+		Example:
+		
+		class Test
+		// in side the class
+		static int a=10;
+		static int b=20;
+	{
+	public static void main (String[] args)
+	{
+	// inside the method
+	System.out.println(Test.a);
+	System.out.println(Test.b);
+	Test t=new Test();
+	t.m1();
+	}
+	void m1()
+	{
+	System.out.println(Test.a);
+	System.out.println(Test.b);
+	}
+	}
+		
+		
+	
+	3.Memory Allocation:- Memory allocated when class file is loaded memory is allocated 
+	4.Storage:- Non-Heap memory.
+	
+	
+	
+	static variables and methods
+	Instance area & static area:- access by using class name
+	

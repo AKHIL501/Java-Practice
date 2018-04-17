@@ -27,7 +27,7 @@
 				
 				3. Instead of string array we can declare String... from 1.5 version.
 				
-				4. args---> String array type instead ogf args we can take any variable like a,b,c,....
+				4. args---> String array type instead of args we can take any variable like a,b,c,....
 				
 				5. 5 methods are applicable in main method
 					public
@@ -43,14 +43,14 @@
 					public static final  void main (String akhil[])----> valid
 					static final strictfp void main (String... akhil)--> Invalid
 					static final static strictfp int main (String... akhil)--> Invalid
-					static final static synchronized strictfp void main (String... akhil)--> valid
+					public final static synchronized strictfp void main (String... akhil)--> valid
 					
 					
 			Example:-
 					
 				class Test
 				{
-				static final static synchronized strictfp void main (String... akhil)
+				public final static synchronized strictfp void main (String... akhil)
 				{
 				System.out.println("hai");
 				}

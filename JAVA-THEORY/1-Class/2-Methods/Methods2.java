@@ -101,7 +101,7 @@ parts of method
 		
 		class Test
 	{
-	void m1(X x, emp e)// Instance method // 
+	void m1(X x, Emp e)// Instance method // 
 	{
 	System.out.println("M1 method");
 	}
