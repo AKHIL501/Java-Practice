@@ -1,0 +1,385 @@
+
+Arrays: Arrays are used to store group of elements, these elements must be homogeneous and fixed size
+ 
+ representation:- [] (square brackets)
+ Ex:- 
+	1.Integer array :- int[]
+	2.String array	:-String[]
+
+	arrays are index based, indexes are starts from 0
+
+	index= length-1
+	
+	Format 1:-
+	1.Declaration:- 
+		int[] a;
+	
+	2.instantation
+		a=new int[5];
+
+	3.initialization
+		a[0]=10;
+		a[1]=20;
+
+	Format 2:-
+
+		int[] a={1,2,3,4,5,6};
+
+		Example:-1
+
+		class Arrays
+		{
+			public static void main(Sting[] args)
+			{
+				int[] a={1,2,3,4};
+				System.out.println(a[0]);//first approach
+				System.out.println(a[1]);
+				System.out.println(a[2]);
+				System.out.println(a[3]);
+
+				for(i=0;i<a.length;i++)// second approach
+				{
+				System.out.println(a[i]);
+				}
+
+				for(int aa :a)//Third approach //a is reference variable
+				{
+				System.out.println(aa);
+				}
+			}
+		}
+
+
+		Example 2:-
+
+		Class ArrayExample2
+		{
+			public static void main(Sting[] args)
+			{
+			int[] a=new int[5];//integer array created with default values [0,0,0,0,0]
+			
+			for(int aa :a)
+				{
+				System.out.println(aa);
+				}
+			boolean[] b=new boolean[3]; //boolean array created with default values [false,false, false]
+			
+			for(int bb :b)
+				{
+				System.out.println(bb); 
+				}
+
+			ArrayExample2[]	 a1=new ArrayExample2[3]; //default values are null,null,null
+				for(ArrayExample2 a2 :1)
+				{
+				System.out.println(a2); 
+				}
+
+		}
+		}
+
+
+		Example 3:-
+
+		Class ArrayExample3
+		{
+			public static void main(Sting[] args)
+			{
+			int[] a=new int[5];//integer array created with default values [0,0,0,0,0]
+			
+			a[0]=10;
+			a[1]=20;
+			a[2]=30;
+
+			for(int aa :a)
+				{
+				System.out.println(aa);
+				}
+			
+
+		}
+		}
+
+		Example 4:-
+
+		Class ArrayExample4
+		{
+			public static void main(Sting[] args)
+			{
+			Emp e1 =new Emp(111,"Akhil");
+			Emp e2 =new Emp(222,"Teju");
+			Emp e3 =new Emp(333,"akki");
+			
+			Emp[] e = new Emp[3];
+			e[0]=e1;
+			e[1]=e2;
+			e[2]=e3;
+
+			for(Emp ee :e)
+				{
+				System.out.println(ee.eid+"----"ee.ename);
+				}
+
+		}
+		}
+
+		Example 5:-
+
+		Class ArrayExample4
+		{
+			public static void main(Sting[] args)
+			{
+			Emp e1 =new Emp(111,"Akhil");
+			Emp e2 =new Emp(222,"Teju");
+			Emp e3 =new Emp(333,"akki");
+			
+			Emp[] e = new Emp[3];
+			e[0]=e1;
+			e[2]=e2; //Exception occurs here -- null pointer exception
+			e[4]=e3;
+
+			for(Emp ee :e)
+				{
+				System.out.println(ee.eid+"----"ee.ename);
+				}
+
+		}
+		}
+
+		*** instanceof operator is used to check type of the object.
+
+		Example 6:-
+
+		Class ArrayExample6
+		{
+			public static void main(Sting[] args)
+			{
+			Emp e1 =new Emp(111,"Akhil");
+			Emp e2 =new Emp(222,"Teju");
+			Emp e3 =new Emp(333,"akki");
+			
+			Emp[] e = new Emp[3];
+			e[0]=e1;
+			e[2]=e2;
+			e[4]=e3;
+
+			for(Object o : e)
+				{
+				if(o instance of Emp)
+					{
+					Emp ee =(Emp) o;
+					System.out.println(ee.eid+"----"ee.ename);
+					}
+				if (o==null)
+				{
+				System.out.println(o);
+				}
+				}
+
+		}
+		}
+
+
+		Example 7:- Finding null values indexes in array.
+		
+		Class ArrayExample6
+		{
+			public static void main(Sting[] args)
+			{
+			Emp e1 =new Emp(111,"Akhil");
+			Emp e2 =new Emp(222,"Teju");
+			Emp e3 =new Emp(333,"akki");
+			
+			Emp[] e = new Emp[3];
+			e[0]=e1;
+			e[2]=e2;
+			e[4]=e3;
+
+			for(int i=0; i<e.length;i++)
+				{
+				if (e[i]==null)
+				{
+					System.out.println(i);
+				}
+				}
+
+		}
+		}
+
+
+Assignment 1:-
+----------------
+
+int[] a={10,20,30,40,50,60,70}
+sum of all elements
+grater element
+small element
+
+Assignment 2:-
+-----------------
+
+String[] s= new String[5]
+s[0]="aaa"
+s[1]="bbb"
+s[2]="ccc"
+s[3]="ddd"
+s[4]="eee"
+
+String s1---------> even element data
+String s2---------> odd element data
+
+Array size increasing and decreasing is not possible
+operations must be complex
+
+		Example 7:- //length vs length()
+
+		class Lvl
+		{
+			public static void main(String[] args)
+			{
+				int[] a=new int[5]
+
+					System.our.println(a.length);
+
+					String s="AKHIL";
+					System.our.println(s.length());
+			}
+		}
+
+
+		Example 8:- Method return type is array and method argument is array
+
+		class Mra
+		{
+			int[] m1()
+			{
+			System.our.println("M1 Method");
+			int[] a={10,20,30};
+			return a;
+			}
+			void m2(double[] d)
+			{
+			System.our.println("M2 Method");
+			for(double dd :d)
+				{
+				System.our.println(d);
+				}
+			}
+			public static void main(String[] args)
+			{
+				Mra m = new Mra();
+				int[] x= m.m1();
+				for ( int xx: x)
+				{
+					System.our.println(xx);
+				}
+				
+				double[] d={10.4,20.4,60.8};
+				t.m2(d);
+			}
+		}
+---------------------------------------------------------------------------------------------------------------------------------
+		2. Multi dimensional Array
+
+		1.int[][] a;
+		2.
+
+		Example 9:-
+
+		class Mra
+		{
+			
+			public static void main(String[] args)
+			{
+							// 0 index		1 index
+				int[][] a={{10,20,30,40},{50,60,70};
+						//   0  1  2  3    0  1  2
+
+				System.out.println(a[1][2]);//60;
+				System.out.println(a[0][2]);//30;
+
+			}
+		}
+---------------------------------------------------------------------------------------------------------------------------
+employee object array example
+
+	Example 1:-
+	Step 1:- create employee class employee.java
+	
+	class Emp
+	{
+		//instance variables
+		int eid;
+		String ename;
+		Emp(int eid, String ename)
+		{
+			this.eid=eid;
+			this.ename=ename;
+		}
+	}
+
+
+	Step 2:-
+
+		class EmpExample
+		{
+		public static void main(String[] args)
+			{
+			Object[] o =new Object[3];
+			o[0]=new Emp(111,"akhil"); // create emp class
+			o[1]=new Student(222,"teju");// create student class
+			0[2]= new Integer(10);
+				
+				for(Object oo:o)
+				{
+					if(oo instanceof Emp)
+					{
+						Emp e =(Emp) oo;
+						System.out.println(e.eid+"----"e.ename);
+					}
+					if(oo instanceof Student)
+					{
+						Student s =(Student) oo;
+						System.out.println(s.sid+"----"s.sname);
+					}
+					if(oo instanceof Integer) // type casting not required for wrapper classes
+					{
+						System.out.println(oo);
+					}
+				}
+
+			}
+		}
+
+
+**** Object array  is stored any type of data
+
+
+	Example 2:-
+
+		class Animal
+		{
+		}
+		class Dog extends Animal
+		{
+		}
+		class Dogkid extends Dog
+		{
+		}
+
+		class EmpExample
+		{
+		public static void main(String[] args)
+			{		
+			Animal[] a =new Animal[3];
+			a[0]= new Animal();
+			a[1]= new Dog();
+			a[0]= new Dogkid();
+
+			for (Animal aa:a)
+			{
+				System.our.println(aa)
+			}
+
+			}
+		}
