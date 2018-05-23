@@ -1,0 +1,15 @@
+Running Servlet without using Eclipse:
+
+		1.Open tomcat installed directory
+		2.Open webapps directory
+		3.Create your project directory
+		4.Open your project directory
+		5.Create WEB-INF directory
+		6.Open  WEB-INF directory
+		7.Create classes  directory
+		8.Open classes  directory crate your java file
+
+
+		setup class path
+
+		compining javac -d WEB-INF\classes

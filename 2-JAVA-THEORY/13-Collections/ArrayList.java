@@ -1,0 +1,9 @@
+Array Lists:
+			1.Version:- Introcuced in 1.2.
+			2.Hetrogeneous Data: Allowed.
+			3.Duplicate Objects: Allowed.
+			4.Null Insertion : Allowed.
+			5.Insertion Order : Preserved.
+			6.Methods	: Non Synchronized.
+			7.Growable array or rezizable array
+			8.Cursors: 
