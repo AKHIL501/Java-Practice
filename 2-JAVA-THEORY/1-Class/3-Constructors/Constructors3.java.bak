@@ -24,15 +24,14 @@ Instance Blocks
 		Examples:---
 		class Test
 		{
-		void m1()// Instance method
+		Test()
 		{
-		System.out.println("M1 method");
+		System.out.println("Default constructor");
 		}
 		
 		public static void main (String[] args)
 		{
 		Test t=new Test();
-		t.m1();
 		}
 		}
 	
@@ -97,7 +96,7 @@ Instance Blocks
 		2.
 		used to initialize some values to instance variables during object creation
 		case :1 problem---------> default values are printed while obj is created.
-		case :1 problem---------> default values are printed while obj is created.
+		
 		
 		class Emp
 		{

@@ -24,15 +24,14 @@ Instance Blocks
 		Examples:---
 		class Test
 		{
-		void m1()// Instance method
+		Test()
 		{
-		System.out.println("M1 method");
+		System.out.println("Default constructor");
 		}
 		
 		public static void main (String[] args)
 		{
 		Test t=new Test();
-		t.m1();
 		}
 		}
 	
@@ -255,7 +254,7 @@ Instance Blocks
 		Test()
 		{
 		this(10);
-		this(10,20); // error this inly first statement only
+		this(10,20); // error this only first statement only
 		System.out.println("0");
 		}
 		Test(int a)

@@ -13,7 +13,7 @@ Parent()
 System.out.println("Parent class 0-arg constructor");
 }
 static{
-System.out.println("Parent class Staatic Block");
+System.out.println("Parent class Static Block");
 }
 class Child
 {

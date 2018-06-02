@@ -11,7 +11,7 @@ Class contains 5 elements
  
 1.Variables
 
-Purpose of variables: variables are used to store the values by using these values we achieving  project requirement.
+Purpose of variables: variables are used to store the values, by using these values we achieving  project requirement.
 
 int a=10--------> a is a variable of int type
  

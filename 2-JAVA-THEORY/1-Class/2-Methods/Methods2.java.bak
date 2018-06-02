@@ -209,7 +209,7 @@ parts of method
 	}
 	void m3(int a)
 	{ 
-	System.out.println("M3 method");
+	System.out.println("M2 method");
 	}
 	 
 	public static void main (String[] args)
