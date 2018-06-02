@@ -202,7 +202,7 @@ Abstraction:-
 			file4:-
 				package com.dss.client;
 				import com.dss.helper.Helper;
-				public class TestClient2 implements Helper
+				public class TestClient2 extends Helper
 				{
 				// 2 methods implementations
 				//1 method implementation from helper class.
